@@ -74,5 +74,17 @@ module.exports = [
         checked: true
       }
     ]
+  },
+
+  //
+  //   Install Craft
+  //
+  //////////////////////////////////////////////////////////////////////
+  {
+    type: 'confirm',
+    name: 'installCraft',
+    message: 'Would you like to install Craft CMS?',
+    default: true,
+    store: true
   }
 ]
