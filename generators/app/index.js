@@ -116,16 +116,10 @@ module.exports = yeoman.Base.extend({
     var self = this;
 
     // Install dev dependencies
-    devDependencies.forEach(function(item) {
-      self.npmInstall([item], { 'saveDev': true });
-    });
+    self.npmInstall(devDependencies, { 'saveDev': true });
 
     // Install dependencies
-    dependencies.forEach(function(item) {
-      self.npmInstall([item], { 'save': true });
-    });
-
-    this.installDependencies();
+    self.npmInstall(dependencies, { 'save': true });
   },
 
   end: function() {
