@@ -5,6 +5,10 @@ var yosay = require('yosay');
 var prompts = require('./modules/prompts');
 
 module.exports = yeoman.Base.extend({
+  initializing: function () {
+    this.composeWith('one-base:gulp');
+  },
+
   prompting: function () {
     // Greet the user
     this.log(yosay(
@@ -25,18 +29,8 @@ module.exports = yeoman.Base.extend({
       this.templatePath('.gitignore'),
       this.destinationPath('.gitignore')
     );
-    this.fs.copy(
-      this.templatePath('gulpfile.js'),
-      this.destinationPath('gulpfile.js')
-    );
-    this.fs.copy(
-      this.templatePath('gulp'),
-      this.destinationPath('gulp')
-    );
-    this.fs.copy(
-      this.templatePath('.gitignore'),
-      this.destinationPath('.gitignore')
-    );
+
+
 
     // Styles
     this.fs.copy(
